@@ -408,11 +408,13 @@ clean: gtest/googlemock/gtest/CMakeFiles/gtest.dir/clean
 # Directory level rules for directory test_pkg
 
 # Convenience name for "all" pass in the directory.
+test_pkg/all: test_pkg/CMakeFiles/test_sub.dir/all
 test_pkg/all: test_pkg/CMakeFiles/test_pub.dir/all
 
 .PHONY : test_pkg/all
 
 # Convenience name for "clean" pass in the directory.
+test_pkg/clean: test_pkg/CMakeFiles/test_sub.dir/clean
 test_pkg/clean: test_pkg/CMakeFiles/roscpp_generate_messages_py.dir/clean
 test_pkg/clean: test_pkg/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 test_pkg/clean: test_pkg/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
@@ -436,6 +438,43 @@ test_pkg/clean: test_pkg/CMakeFiles/test_pub.dir/clean
 test_pkg/preinstall:
 
 .PHONY : test_pkg/preinstall
+
+#=============================================================================
+# Target rules for target test_pkg/CMakeFiles/test_sub.dir
+
+# All Build rule for target.
+test_pkg/CMakeFiles/test_sub.dir/all:
+	$(MAKE) -f test_pkg/CMakeFiles/test_sub.dir/build.make test_pkg/CMakeFiles/test_sub.dir/depend
+	$(MAKE) -f test_pkg/CMakeFiles/test_sub.dir/build.make test_pkg/CMakeFiles/test_sub.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/yamaguchi/test_ros/catkin_ws/build/CMakeFiles --progress-num=14,15 "Built target test_sub"
+.PHONY : test_pkg/CMakeFiles/test_sub.dir/all
+
+# Include target in all.
+all: test_pkg/CMakeFiles/test_sub.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+test_pkg/CMakeFiles/test_sub.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yamaguchi/test_ros/catkin_ws/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 test_pkg/CMakeFiles/test_sub.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/yamaguchi/test_ros/catkin_ws/build/CMakeFiles 0
+.PHONY : test_pkg/CMakeFiles/test_sub.dir/rule
+
+# Convenience name for target.
+test_sub: test_pkg/CMakeFiles/test_sub.dir/rule
+
+.PHONY : test_sub
+
+# clean rule for target.
+test_pkg/CMakeFiles/test_sub.dir/clean:
+	$(MAKE) -f test_pkg/CMakeFiles/test_sub.dir/build.make test_pkg/CMakeFiles/test_sub.dir/clean
+.PHONY : test_pkg/CMakeFiles/test_sub.dir/clean
+
+# clean rule for target.
+clean: test_pkg/CMakeFiles/test_sub.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Target rules for target test_pkg/CMakeFiles/roscpp_generate_messages_py.dir

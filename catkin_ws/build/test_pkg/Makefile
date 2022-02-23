@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+test_pkg/CMakeFiles/test_sub.dir/rule:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test_pkg/CMakeFiles/test_sub.dir/rule
+.PHONY : test_pkg/CMakeFiles/test_sub.dir/rule
+
+# Convenience name for target.
+test_sub: test_pkg/CMakeFiles/test_sub.dir/rule
+
+.PHONY : test_sub
+
+# fast build rule for target.
+test_sub/fast:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f test_pkg/CMakeFiles/test_sub.dir/build.make test_pkg/CMakeFiles/test_sub.dir/build
+.PHONY : test_sub/fast
+
+# Convenience name for target.
 test_pkg/CMakeFiles/roscpp_generate_messages_py.dir/rule:
 	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 test_pkg/CMakeFiles/roscpp_generate_messages_py.dir/rule
 .PHONY : test_pkg/CMakeFiles/roscpp_generate_messages_py.dir/rule
@@ -434,6 +449,33 @@ src/test_pub.cpp.s:
 	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f test_pkg/CMakeFiles/test_pub.dir/build.make test_pkg/CMakeFiles/test_pub.dir/src/test_pub.cpp.s
 .PHONY : src/test_pub.cpp.s
 
+src/test_sub.o: src/test_sub.cpp.o
+
+.PHONY : src/test_sub.o
+
+# target to build an object file
+src/test_sub.cpp.o:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f test_pkg/CMakeFiles/test_sub.dir/build.make test_pkg/CMakeFiles/test_sub.dir/src/test_sub.cpp.o
+.PHONY : src/test_sub.cpp.o
+
+src/test_sub.i: src/test_sub.cpp.i
+
+.PHONY : src/test_sub.i
+
+# target to preprocess a source file
+src/test_sub.cpp.i:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f test_pkg/CMakeFiles/test_sub.dir/build.make test_pkg/CMakeFiles/test_sub.dir/src/test_sub.cpp.i
+.PHONY : src/test_sub.cpp.i
+
+src/test_sub.s: src/test_sub.cpp.s
+
+.PHONY : src/test_sub.s
+
+# target to generate assembly for a file
+src/test_sub.cpp.s:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f test_pkg/CMakeFiles/test_sub.dir/build.make test_pkg/CMakeFiles/test_sub.dir/src/test_sub.cpp.s
+.PHONY : src/test_sub.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -444,6 +486,7 @@ help:
 	@echo "... install/local"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... test_sub"
 	@echo "... list_install_components"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... edit_cache"
@@ -466,6 +509,9 @@ help:
 	@echo "... src/test_pub.o"
 	@echo "... src/test_pub.i"
 	@echo "... src/test_pub.s"
+	@echo "... src/test_sub.o"
+	@echo "... src/test_sub.i"
+	@echo "... src/test_sub.s"
 .PHONY : help
 
 

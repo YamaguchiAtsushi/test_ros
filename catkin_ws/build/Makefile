@@ -285,6 +285,19 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
+# Target rules for targets named test_sub
+
+# Build rule for target.
+test_sub: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_sub
+.PHONY : test_sub
+
+# fast build rule for target.
+test_sub/fast:
+	$(MAKE) -f test_pkg/CMakeFiles/test_sub.dir/build.make test_pkg/CMakeFiles/test_sub.dir/build
+.PHONY : test_sub/fast
+
+#=============================================================================
 # Target rules for targets named roscpp_generate_messages_py
 
 # Build rule for target.
@@ -514,6 +527,7 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... test_sub"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
