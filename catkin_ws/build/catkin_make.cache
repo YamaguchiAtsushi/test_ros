@@ -1,2 +1,2 @@
-test_pkg
+image_test:test_pkg
 -DCATKIN_DEVEL_PREFIX=/home/yamaguchi/test_ros/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/yamaguchi/test_ros/catkin_ws/install -G Unix Makefiles
