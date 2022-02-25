@@ -26,10 +26,13 @@ public:
         int imageIdx = 0;
         while(ros::ok()){
             ros::spinOnce();
+
             std::string imageFileName = imagesDir_ + std::to_string(imageIdx) + ".jpg";
-            printf("imageFileName = %s\n", imageFileName.c_str());
-            
+            //printf("imageFileName = %s\n", imageFileName.c_str());
             cv::Mat image = cv::imread(imageFileName, 1);
+            std_msgs::Header header;
+            header.stamp = ros::Time::now();
+            header.frame_id = "/image";
             sensor_msgs::ImagePtr msg = cv_bridge::CvImage(std_msgs::Header(), "bgr8", image).toImageMsg();
             imagePub_.publish(msg);
             
@@ -46,4 +49,5 @@ int main(int argc, char **argv){
     ros::init(argc, argv, "image_publisher");
     ImagePublisher publisher;
     publisher.spin();
+    return 0;
 }

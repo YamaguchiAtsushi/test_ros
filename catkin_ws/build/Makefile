@@ -610,6 +610,19 @@ image_publisher/fast:
 .PHONY : image_publisher/fast
 
 #=============================================================================
+# Target rules for targets named edge_extraction
+
+# Build rule for target.
+edge_extraction: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 edge_extraction
+.PHONY : edge_extraction
+
+# fast build rule for target.
+edge_extraction/fast:
+	$(MAKE) -f image_test/CMakeFiles/edge_extraction.dir/build.make image_test/CMakeFiles/edge_extraction.dir/build
+.PHONY : edge_extraction/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -695,6 +708,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... image_publisher"
+	@echo "... edge_extraction"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"

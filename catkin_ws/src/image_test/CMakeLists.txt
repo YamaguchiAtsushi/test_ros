@@ -213,4 +213,9 @@ add_executable(image_publisher src/image_publisher.cpp)
 target_link_libraries(image_publisher ${catkin_LIBRARIES})
 
 
+add_executable(edge_extraction src/edge_extraction.cpp)
+
+target_link_libraries(edge_extraction ${catkin_LIBRARIES})
+
+
 

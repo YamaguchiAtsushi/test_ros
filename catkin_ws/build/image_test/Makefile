@@ -80,6 +80,18 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -122,18 +134,6 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
-
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -288,6 +288,21 @@ image_publisher/fast:
 .PHONY : image_publisher/fast
 
 # Convenience name for target.
+image_test/CMakeFiles/edge_extraction.dir/rule:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 image_test/CMakeFiles/edge_extraction.dir/rule
+.PHONY : image_test/CMakeFiles/edge_extraction.dir/rule
+
+# Convenience name for target.
+edge_extraction: image_test/CMakeFiles/edge_extraction.dir/rule
+
+.PHONY : edge_extraction
+
+# fast build rule for target.
+edge_extraction/fast:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/edge_extraction.dir/build.make image_test/CMakeFiles/edge_extraction.dir/build
+.PHONY : edge_extraction/fast
+
+# Convenience name for target.
 image_test/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
 	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 image_test/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
 .PHONY : image_test/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
@@ -332,6 +347,33 @@ geometry_msgs_generate_messages_eus/fast:
 	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
+src/edge_extraction.o: src/edge_extraction.cpp.o
+
+.PHONY : src/edge_extraction.o
+
+# target to build an object file
+src/edge_extraction.cpp.o:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/edge_extraction.dir/build.make image_test/CMakeFiles/edge_extraction.dir/src/edge_extraction.cpp.o
+.PHONY : src/edge_extraction.cpp.o
+
+src/edge_extraction.i: src/edge_extraction.cpp.i
+
+.PHONY : src/edge_extraction.i
+
+# target to preprocess a source file
+src/edge_extraction.cpp.i:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/edge_extraction.dir/build.make image_test/CMakeFiles/edge_extraction.dir/src/edge_extraction.cpp.i
+.PHONY : src/edge_extraction.cpp.i
+
+src/edge_extraction.s: src/edge_extraction.cpp.s
+
+.PHONY : src/edge_extraction.s
+
+# target to generate assembly for a file
+src/edge_extraction.cpp.s:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/edge_extraction.dir/build.make image_test/CMakeFiles/edge_extraction.dir/src/edge_extraction.cpp.s
+.PHONY : src/edge_extraction.cpp.s
+
 src/image_publisher.o: src/image_publisher.cpp.o
 
 .PHONY : src/image_publisher.o
@@ -367,6 +409,7 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... install"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_cpp"
@@ -376,13 +419,16 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... image_publisher"
+	@echo "... edge_extraction"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... test"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... edit_cache"
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... list_install_components"
-	@echo "... install"
+	@echo "... src/edge_extraction.o"
+	@echo "... src/edge_extraction.i"
+	@echo "... src/edge_extraction.s"
 	@echo "... src/image_publisher.o"
 	@echo "... src/image_publisher.i"
 	@echo "... src/image_publisher.s"
