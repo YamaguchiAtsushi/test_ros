@@ -217,5 +217,7 @@ add_executable(edge_extraction src/edge_extraction.cpp)
 
 target_link_libraries(edge_extraction ${catkin_LIBRARIES})
 
+add_executable(line_extraction src/line_extraction.cpp)
 
+target_link_libraries(line_extraction ${catkin_LIBRARIES})
 

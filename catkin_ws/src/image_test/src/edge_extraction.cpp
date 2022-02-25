@@ -33,7 +33,7 @@ public:
             return;
         }
         cv::Mat edge;
-        cv::Canny(cvPtr->image, edge, 100.0, 200.0);
+        cv::Canny(cvPtr->image, edge, 150.0, 200.0);
         std_msgs::Header header;
         header = msg->header;
         sensor_msgs::ImagePtr imageMsg = cv_bridge::CvImage(header, "mono8", edge).toImageMsg();

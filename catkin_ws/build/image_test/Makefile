@@ -92,6 +92,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -124,16 +134,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -243,6 +243,36 @@ sensor_msgs_generate_messages_eus/fast:
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+.PHONY : image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_eus: image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+image_test/CMakeFiles/line_extraction.dir/rule:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 image_test/CMakeFiles/line_extraction.dir/rule
+.PHONY : image_test/CMakeFiles/line_extraction.dir/rule
+
+# Convenience name for target.
+line_extraction: image_test/CMakeFiles/line_extraction.dir/rule
+
+.PHONY : line_extraction
+
+# fast build rule for target.
+line_extraction/fast:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/line_extraction.dir/build.make image_test/CMakeFiles/line_extraction.dir/build
+.PHONY : line_extraction/fast
+
+# Convenience name for target.
 image_test/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
 	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 image_test/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 .PHONY : image_test/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
@@ -332,21 +362,6 @@ geometry_msgs_generate_messages_nodejs/fast:
 	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make image_test/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
-# Convenience name for target.
-image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
 src/edge_extraction.o: src/edge_extraction.cpp.o
 
 .PHONY : src/edge_extraction.o
@@ -401,6 +416,33 @@ src/image_publisher.cpp.s:
 	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/image_publisher.dir/build.make image_test/CMakeFiles/image_publisher.dir/src/image_publisher.cpp.s
 .PHONY : src/image_publisher.cpp.s
 
+src/line_extraction.o: src/line_extraction.cpp.o
+
+.PHONY : src/line_extraction.o
+
+# target to build an object file
+src/line_extraction.cpp.o:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/line_extraction.dir/build.make image_test/CMakeFiles/line_extraction.dir/src/line_extraction.cpp.o
+.PHONY : src/line_extraction.cpp.o
+
+src/line_extraction.i: src/line_extraction.cpp.i
+
+.PHONY : src/line_extraction.i
+
+# target to preprocess a source file
+src/line_extraction.cpp.i:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/line_extraction.dir/build.make image_test/CMakeFiles/line_extraction.dir/src/line_extraction.cpp.i
+.PHONY : src/line_extraction.cpp.i
+
+src/line_extraction.s: src/line_extraction.cpp.s
+
+.PHONY : src/line_extraction.s
+
+# target to generate assembly for a file
+src/line_extraction.cpp.s:
+	cd /home/yamaguchi/test_ros/catkin_ws/build && $(MAKE) -f image_test/CMakeFiles/line_extraction.dir/build.make image_test/CMakeFiles/line_extraction.dir/src/line_extraction.cpp.s
+.PHONY : src/line_extraction.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -415,6 +457,9 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... list_install_components"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... line_extraction"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... rebuild_cache"
 	@echo "... geometry_msgs_generate_messages_py"
@@ -424,14 +469,15 @@ help:
 	@echo "... test"
 	@echo "... geometry_msgs_generate_messages_nodejs"
 	@echo "... edit_cache"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... list_install_components"
 	@echo "... src/edge_extraction.o"
 	@echo "... src/edge_extraction.i"
 	@echo "... src/edge_extraction.s"
 	@echo "... src/image_publisher.o"
 	@echo "... src/image_publisher.i"
 	@echo "... src/image_publisher.s"
+	@echo "... src/line_extraction.o"
+	@echo "... src/line_extraction.i"
+	@echo "... src/line_extraction.s"
 .PHONY : help
 
 

@@ -571,6 +571,32 @@ sensor_msgs_generate_messages_eus/fast:
 .PHONY : sensor_msgs_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_eus
+
+# Build rule for target.
+geometry_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
+.PHONY : geometry_msgs_generate_messages_eus
+
+# fast build rule for target.
+geometry_msgs_generate_messages_eus/fast:
+	$(MAKE) -f image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
+.PHONY : geometry_msgs_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named line_extraction
+
+# Build rule for target.
+line_extraction: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 line_extraction
+.PHONY : line_extraction
+
+# fast build rule for target.
+line_extraction/fast:
+	$(MAKE) -f image_test/CMakeFiles/line_extraction.dir/build.make image_test/CMakeFiles/line_extraction.dir/build
+.PHONY : line_extraction/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -648,19 +674,6 @@ geometry_msgs_generate_messages_nodejs/fast:
 	$(MAKE) -f image_test/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make image_test/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
 .PHONY : geometry_msgs_generate_messages_nodejs/fast
 
-#=============================================================================
-# Target rules for targets named geometry_msgs_generate_messages_eus
-
-# Build rule for target.
-geometry_msgs_generate_messages_eus: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_eus
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	$(MAKE) -f image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make image_test/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -705,13 +718,14 @@ help:
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... line_extraction"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... image_publisher"
 	@echo "... edge_extraction"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_eus"
 .PHONY : help
 
 
